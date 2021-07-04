@@ -10,6 +10,7 @@ import (
 )
 
 const timeout = 5 * time.Second
+const apiRoot = "/api/v1/"
 
 type Config struct {
 	// ApiKey for the api
@@ -39,7 +40,7 @@ type errorResponse struct {
 }
 
 func (c *Client) sendRequest(hostname string, method string, path string, body io.Reader, data interface{}) error {
-	apiRoot := hostname + "/api/v1/"
+	apiRoot := hostname + apiRoot
 	url := apiRoot + path
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
