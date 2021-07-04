@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const timeout = time.Hour
+const timeout = 5 * time.Second
 
 type Config struct {
 	// ApiKey for the api
