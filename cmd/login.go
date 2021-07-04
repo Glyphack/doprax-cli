@@ -34,7 +34,7 @@ func NewCmdLogin(f *cmdutil.Factory) *cobra.Command {
 			}
 			viper.Set("api-key", apiKey)
 
-			email, err := cmd.Flags().GetString("username")
+			email, err := cmd.Flags().GetString("email")
 			password, err := cmd.Flags().GetString("password")
 
 			if email == "" || password == "" {
