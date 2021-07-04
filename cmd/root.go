@@ -45,11 +45,6 @@ func NewRootCmd(f *cmdutil.Factory) *cobra.Command {
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
-	err := config.WriteConfigFile()
-	if err != nil {
-		log.Panic(err)
-	}
-
 	configDir, err := config.GetConfigDir()
 	if err != nil {
 		log.Panic(err)
@@ -62,8 +57,5 @@ func initConfig() {
 	viper.AutomaticEnv() // read in environment variables that match
 
 	// If a config file is found, read it in.
-	err = viper.ReadInConfig()
-	if err != nil {
-		log.Fatal("Cannot read config file", err)
-	}
+	_ = viper.ReadInConfig()
 }
