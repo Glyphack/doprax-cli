@@ -45,6 +45,11 @@ func NewRootCmd(f *cmdutil.Factory) *cobra.Command {
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
+	err := config.WriteConfigFile()
+	if err != nil {
+		log.Panic(err)
+	}
+
 	configDir, err := config.GetConfigDir()
 	if err != nil {
 		log.Panic(err)
