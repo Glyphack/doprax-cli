@@ -1,6 +1,19 @@
 # Doprax CLI
 Doprax CLI is a unofficial CLI tool to interact with doprax.com dashboard. you can view and manage your projects within CLI.
 
+- [Doprax CLI](#doprax-cli)
+  * [Install](#install)
+    + [go get](#go-get)
+  * [Commands](#commands)
+    + [login](#login)
+    + [Project](#project)
+
+## Install
+### go get
+```
+go get -v  github.com/glyphack/doprax-cli
+```
+
 ## Commands
 To view help run `doprax help`
 
