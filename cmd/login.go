@@ -42,10 +42,10 @@ func NewCmdLogin(f *cmdutil.Factory) *cobra.Command {
 			}
 			result, _ := client.Login(&api.LoginData{Email: email, Password: password})
 			if result.Success {
-				fmt.Printf("%s Welcome %s", result.SuccessMsg, result.Username)
+				fmt.Printf("%s Welcome %s\n", result.SuccessMsg, result.Username)
 				viper.Set("cca", result.Cca)
 			} else {
-				fmt.Printf("Login failed %s", result.ErrorMsg)
+				fmt.Printf("Login failed %s\n", result.ErrorMsg)
 			}
 
 			err = config.WriteConfigFile()
