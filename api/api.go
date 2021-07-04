@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const timeout = 5 * time.Second
+const timeout = 10 * time.Second
 const apiRoot = "/api/v1/"
 
 type Config struct {
