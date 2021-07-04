@@ -63,7 +63,7 @@ func (c *Client) sendRequest(hostname string, method string, path string, body i
 			return fmt.Errorf("login token expired please login again")
 		}
 		if err = json.NewDecoder(res.Body).Decode(&errRes); err == nil {
-			return fmt.Errorf("lailed fetching %s, error: %s, statusCode: %s", url, errRes.Message, fmt.Sprint(res.StatusCode))
+			return fmt.Errorf("failed fetching %s, error: %s, statusCode: %s", url, errRes.Message, fmt.Sprint(res.StatusCode))
 		}
 
 		return fmt.Errorf("unknown error, status code: %d", res.StatusCode)
@@ -75,7 +75,6 @@ func (c *Client) sendRequest(hostname string, method string, path string, body i
 	}
 	err = json.Unmarshal(b, &data)
 	if err != nil {
-		fmt.Print("Errorrrrrr")
 		return err
 	}
 
